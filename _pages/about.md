@@ -189,6 +189,9 @@ Before joining Durable, I served as a post-doctoral researcher at the [Universit
     <ul>
       <li><strong>Program Committee</strong></li>
       <ul>
+        <li><a href="https://neurips.cc/Conferences/2025"> Conference on Neural Information Processing Systems (NeurIPS)</a></li>
+      </ul>
+      <ul>
         <li><a href="https://iclr.cc/Conferences/2025"> International Conference on Learning Representations (ICLR)</a></li>
       </ul>
       <ul>
