@@ -184,6 +184,14 @@ Before joining Durable, I served as a post-doctoral researcher at the [Universit
 
 ## Academic Service
 <ul>
+    <li>
+    <strong>2025</strong>
+    <ul>
+      <li><strong>Program Committee</strong></li>
+      <ul>
+        <li><a href="https://2025.splashcon.org/track/OOPSLA"> ACM Conference on Object-Oriented Programming, Languages, Systems, and Applications (OOPSLA)</a></li>
+      </ul>
+  </li>
   <li>
     <strong>2025</strong>
     <ul>
