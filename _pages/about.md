@@ -75,7 +75,7 @@ I like problems that combine **abstract reasoning** (logic, semantics, verificat
 
 ---
 
-## Academic service (selected)
+## Academic service
 
 - **Program Committee**
   - OOPSLA 2026 — ACM Conference on Object-Oriented Programming, Languages, Systems, and Applications  
