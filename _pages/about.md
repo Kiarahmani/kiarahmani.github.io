@@ -9,9 +9,9 @@ redirect_from:
 ---
 
 I am an applied scientist working at the intersection of **programming languages, formal methods, and modern AI systems**.  
-My recent work focuses on **LLM-based program synthesis, agent orchestration, and evaluation infrastructure** for real-world applications.
+My recent work focuses on LLM-based program synthesis, agent orchestration, and evaluation infrastructure for real-world applications.
 
-I’m a founding engineer at [Durable](https://durable.ai/), where we work on **reliable agent/program synthesis from product requirement documents**, multi-API integration, and automated QA/repair pipelines for LLM agents.
+I’m a founding engineer at [Durable](https://durable.ai/), where we work on reliable agent/program synthesis from product requirement documents, multi-API integration, and automated QA/repair pipelines for LLM agents.
 
 Before that, I was a post-doctoral researcher at the [University of Texas at Austin](https://www.utexas.edu/) with [Isil Dillig](https://www.cs.utexas.edu/~isil/) and [Joydeep Biswas](https://www.joydeepb.com/), and I received my Ph.D. in Computer Science from [Purdue University](https://www.cs.purdue.edu/) with [Suresh Jagannathan](https://www.cs.purdue.edu/homes/suresh/) and [Ben Delaware](https://www.cs.purdue.edu/homes/bendy/). I also spent time at [Microsoft Research](https://www.microsoft.com/en-us/research/) working with [Sumit Gulwani](https://www.microsoft.com/en-us/research/people/sumitg/) on **LLM-guided program synthesis** in 2020. 
 
