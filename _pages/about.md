@@ -8,8 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-## About
-
 I am an applied scientist working at the intersection of **programming languages, formal methods, and modern AI systems**.  
 My recent work focuses on **LLM-based program synthesis, agent orchestration, and evaluation infrastructure** for real-world applications.
 
