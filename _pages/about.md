@@ -95,5 +95,3 @@ The easiest way to reach me is by email:
 - **Email:** [kia@krahmani.com](mailto:kia@krahmani.com)  
 - **GitHub:** [github.com/kiarahmani](https://github.com/kiarahmani)  
 - **LinkedIn:** [linkedin.com/in/kia-rahmani](https://www.linkedin.com/in/kia-rahmani/)
-
-I’m open to roles and collaborations around **LLM systems, AI infrastructure, agent orchestration, program synthesis, and verification-heavy systems work**.
