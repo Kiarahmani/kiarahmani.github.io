@@ -15,7 +15,7 @@ export const links = {
 };
 
 export const about = [
-  `I work on verified AI systems at <a class="ilink" href="https://math.inc/">Math, Inc.</a>, pairing large language models with machine-checked proofs.`,
+  `I work at <a class="ilink" href="https://math.inc/">Math, Inc.</a>, at the intersection of formal verification and AI.`,
   `Before that I spent a few years at a startup building neurosymbolic program synthesizers and LLM agents. I did my Ph.D. at <a class="ilink" href="https://www.cs.purdue.edu/">Purdue</a> and a postdoc at <a class="ilink" href="https://www.cs.utexas.edu/">UT Austin</a>, both in programming languages and formal methods, and spent time at <a class="ilink" href="https://www.microsoft.com/en-us/research/">Microsoft Research</a>.`,
 ];
 
