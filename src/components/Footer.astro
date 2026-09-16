@@ -1,0 +1,79 @@
+---
+import { profile } from "../data/site";
+const year = 2026;
+---
+
+<footer>
+  <div class="wrap foot-inner">
+    <!-- Colophon: a discrete search space. One path found, the rest pruned. -->
+    <svg class="mark" viewBox="0 0 240 132" aria-hidden="true">
+      <!-- pruned subtrees -->
+      <g stroke="currentColor" stroke-width="0.75" fill="none" opacity="0.45" stroke-dasharray="1.5 3.5">
+        <path d="M180 48 L150 84" />
+        <path d="M180 48 L210 84" />
+        <path d="M30 84 L15 120" />
+        <path d="M30 84 L45 120" />
+        <path d="M150 84 L135 120" />
+        <path d="M150 84 L165 120" />
+        <path d="M210 84 L195 120" />
+        <path d="M210 84 L225 120" />
+      </g>
+      <!-- explored frontier -->
+      <g stroke="currentColor" stroke-width="0.75" fill="none">
+        <path d="M120 12 L180 48" />
+        <path d="M60 48 L30 84" />
+        <path d="M90 84 L75 120" />
+      </g>
+      <!-- the found path -->
+      <g stroke="var(--accent)" stroke-width="1.2" fill="none">
+        <path d="M120 12 L60 48 L90 84 L105 120" />
+      </g>
+      <!-- nodes -->
+      <g fill="var(--bg)" stroke="currentColor" stroke-width="0.8" opacity="0.45">
+        <circle cx="150" cy="84" r="2.2" />
+        <circle cx="210" cy="84" r="2.2" />
+        <circle cx="15" cy="120" r="2.2" />
+        <circle cx="45" cy="120" r="2.2" />
+        <circle cx="135" cy="120" r="2.2" />
+        <circle cx="165" cy="120" r="2.2" />
+        <circle cx="195" cy="120" r="2.2" />
+        <circle cx="225" cy="120" r="2.2" />
+      </g>
+      <g fill="var(--bg)" stroke="currentColor" stroke-width="0.8">
+        <circle cx="180" cy="48" r="2.2" />
+        <circle cx="30" cy="84" r="2.2" />
+        <circle cx="75" cy="120" r="2.2" />
+      </g>
+      <g fill="var(--bg)" stroke="var(--accent)" stroke-width="1">
+        <circle cx="120" cy="12" r="2.4" />
+        <circle cx="60" cy="48" r="2.4" />
+        <circle cx="90" cy="84" r="2.4" />
+      </g>
+      <circle cx="105" cy="120" r="3" fill="var(--accent)" />
+    </svg>
+
+    <span class="colophon">© {year} · {profile.name}</span>
+
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--line);
+    margin-top: 6rem;
+    padding-block: 3.25rem 2.5rem;
+  }
+  .foot-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.1rem;
+  }
+  .mark { color: var(--faint); width: 11rem; }
+  .colophon {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--faint);
+  }
+</style>

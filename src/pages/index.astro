@@ -1,0 +1,200 @@
+---
+import Base from "../layouts/Base.astro";
+import Footer from "../components/Footer.astro";
+import { profile, links, about, service } from "../data/site";
+import { publications, ME } from "../data/publications";
+
+const sortedPubs = [...publications].sort((a, b) => b.year - a.year);
+const sortedService = [...service].sort((a, b) => b.year - a.year);
+
+const kindLabel: Record<string, string> = {
+  patent: "Patent",
+  thesis: "Thesis",
+};
+---
+
+<Base>
+  <!-- ===================== INTRO ===================== -->
+  <section class="section intro">
+    <div class="wrap intro-grid">
+      <img class="photo" src={profile.photo} alt={profile.name} width="150" height="150" />
+      <div class="intro-text">
+        <h1 class="name">{profile.name}</h1>
+        <p class="role">
+          {profile.role} · <a class="ilink" href={profile.orgUrl}>{profile.org}</a> · {profile.location}
+        </p>
+        {about.map((p) => <p class="bio" set:html={p} />)}
+        <div class="intro-links">
+          <a class="link" href={`mailto:${links.email}`}>Email</a>
+          <a class="link" href={links.scholar} target="_blank" rel="noopener">Google&nbsp;Scholar</a>
+          <a class="link" href={links.github} target="_blank" rel="noopener">GitHub</a>
+          <a class="link" href={links.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PUBLICATIONS ===================== -->
+  <section id="publications" class="section ruled">
+    <div class="wrap">
+      <h2 class="section-h">Publications</h2>
+      <ol class="rows">
+        {sortedPubs.map((p) => (
+          <li class="row">
+            <div class="row-year tnum">{p.year}</div>
+            <div>
+              <h3 class="row-title">{p.title}</h3>
+              <p class="pub-authors">
+                {p.authors.map((a, i) => (
+                  <>{a === ME ? <strong>{a}</strong> : a}{i < p.authors.length - 1 ? ", " : ""}</>
+                ))}
+              </p>
+              <p class="row-meta">
+                <a class="row-venue" href={p.venueUrl} target="_blank" rel="noopener">{p.venue}</a>
+                {p.venueName && <><span class="sep">·</span><span>{p.venueName}</span></>}
+                {kindLabel[p.kind] && <span class="pub-kind">{kindLabel[p.kind]}</span>}
+                {p.links.map((l) => (
+                  <>
+                    <span class="sep">·</span>
+                    <a class="link" href={l.href} target="_blank" rel="noopener">{l.label}</a>
+                  </>
+                ))}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICE ===================== -->
+  <section id="service" class="section ruled">
+    <div class="wrap">
+      <h2 class="section-h">Service</h2>
+      <ol class="rows compact">
+        {sortedService.map((s) => (
+          <li class="row">
+            <div class="row-year tnum">{s.year}</div>
+            <div>
+              <h3 class="row-title">
+                <a class="ilink" href={s.href} target="_blank" rel="noopener">{s.name}</a>
+              </h3>
+              <p class="row-meta">
+                <span class="row-venue">{s.venue}</span>
+                <span class="sep">·</span>
+                <span>{s.role}</span>
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <Footer />
+</Base>
+
+<style>
+  .section { padding-block: 3.25rem; }
+  .ruled { border-top: 1px solid var(--line); }
+
+  .section-h {
+    font-size: 1.55rem;
+    font-weight: 400;
+    color: var(--accent);
+    margin: 0 0 1.75rem;
+  }
+
+  /* ---------- intro ---------- */
+  .intro { padding-top: 5.5rem; }
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 9.375rem 1fr;
+    gap: 2.25rem;
+    align-items: start;
+  }
+  .photo {
+    width: 9.375rem;
+    height: 9.375rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid var(--line-strong);
+    mix-blend-mode: multiply;   /* sits into the paper */
+  }
+  .name {
+    font-size: clamp(2.3rem, 5.6vw, 3.1rem);
+    font-weight: 400;
+    margin: 0 0 0.5rem;
+  }
+  .role {
+    font-family: var(--font-mono);
+    color: var(--muted);
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+    margin: 0 0 1.6rem;
+  }
+  .bio { margin: 0 0 1rem; max-width: 60ch; }
+  .intro-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    margin-top: 1.6rem;
+    font-size: 0.8rem;
+  }
+  @media (max-width: 640px) {
+    .intro-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .photo { width: 6.875rem; height: 6.875rem; }
+  }
+
+  /* ---------- row lists (publications, service) ---------- */
+  .rows { list-style: none; margin: 0; padding: 0; }
+  .row {
+    display: grid;
+    grid-template-columns: 3.5rem 1fr;
+    gap: 1.25rem;
+    padding: 1.1rem 0;
+    border-top: 1px solid var(--line);
+  }
+  .row:first-child { border-top: none; }
+  .row-year {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--faint);
+    padding-top: 0.3rem;
+  }
+  .row-title { font-size: 1.15rem; font-weight: 400; line-height: 1.35; margin: 0 0 0.3rem; }
+  .pub-authors { font-size: 0.98rem; color: var(--muted); margin: 0 0 0.35rem; }
+  .pub-authors :global(strong) { color: var(--text); }
+  .row-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.55rem;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: var(--muted);
+    margin: 0;
+  }
+  .row-venue { color: var(--accent); letter-spacing: 0.04em; }
+  a.row-venue:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .pub-kind {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--line-strong);
+    border-radius: 2px;
+    padding: 0.05rem 0.4rem;
+  }
+  .row-meta .sep { color: var(--faint); }
+
+  /* service rows: same grid, a touch tighter */
+  .compact .row { padding: 0.85rem 0; }
+  .compact .row-title { font-size: 1.05rem; margin-bottom: 0.2rem; }
+  .compact .row-year { padding-top: 0.2rem; }
+
+  @media (max-width: 560px) {
+    .row { grid-template-columns: 1fr; gap: 0.35rem; }
+    .row-year { padding-top: 0; }
+  }
+</style>
