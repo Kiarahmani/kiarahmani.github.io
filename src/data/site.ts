@@ -23,7 +23,7 @@ export interface ServiceItem {
   year: number;
   venue: string;      // short name shown in the meta line
   name: string;       // full name, shown as the linked title
-  role: "Program committee" | "Reviewer";
+  role: "Program committee" | "Review committee" | "Reviewer";
   href: string;
 }
 
@@ -32,8 +32,8 @@ export const service: ServiceItem[] = [
     year: 2026,
     venue: "OOPSLA",
     name: "ACM Conference on Object-Oriented Programming, Systems, Languages, and Applications",
-    role: "Program committee",
-    href: "https://2026.splashcon.org/track/OOPSLA",
+    role: "Review committee",
+    href: "https://2026.splashcon.org/track/oopsla-2026",
   },
   {
     year: 2026,
