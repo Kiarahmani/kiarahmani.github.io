@@ -30,17 +30,17 @@ export interface ServiceItem {
 export const service: ServiceItem[] = [
   {
     year: 2026,
-    venue: "OOPSLA",
-    name: "ACM Conference on Object-Oriented Programming, Systems, Languages, and Applications",
-    role: "Review committee",
-    href: "https://2026.splashcon.org/track/oopsla-2026",
-  },
-  {
-    year: 2026,
     venue: "VeriCodeGen @ NeurIPS",
     name: "AI for Verifiable Coding",
     role: "Reviewer",
     href: "https://vericodegen.github.io/",
+  },
+  {
+    year: 2026,
+    venue: "OOPSLA",
+    name: "ACM Conference on Object-Oriented Programming, Systems, Languages, and Applications",
+    role: "Review committee",
+    href: "https://2026.splashcon.org/track/oopsla-2026",
   },
   {
     year: 2025,
